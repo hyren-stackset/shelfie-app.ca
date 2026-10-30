@@ -1,0 +1,6 @@
+/* TEAM */
+Founders: Kevin Chan, Brian Ren
+Company: Stackset Technologies Inc., Markham, Ontario, Canada
+
+/* SITE */
+Static HTML + CSS, GSAP, ScrollTrigger, Lenis, SplitType. Self-hosted fonts. No trackers.

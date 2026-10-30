@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security &amp; privacy — Shelfie</title>
+  <meta name="description" content="How Shelfie protects your data: integration endpoints instead of exposed databases, SSO and MFA for the team, containerised services, row-level security, and privacy controls you own." />
+  <link rel="canonical" href="https://shelfie-app.ca/security/" />
+  <meta name="theme-color" content="#faf7f2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Shelfie" />
+  <meta property="og:title" content="Security &amp; privacy — Shelfie" />
+  <meta property="og:description" content="How Shelfie protects your data: integration endpoints instead of exposed databases, SSO and MFA for the team, containerised services, row-level security, and privacy controls you own." />
+  <meta property="og:url" content="https://shelfie-app.ca/security/" />
+  <meta property="og:image" content="https://shelfie-app.ca/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Security &amp; privacy — Shelfie" />
+  <meta name="twitter:description" content="How Shelfie protects your data: integration endpoints instead of exposed databases, SSO and MFA for the team, containerised services, row-level security, and privacy controls you own." />
+  <meta name="twitter:image" content="https://shelfie-app.ca/assets/og.png" />
+  <meta name="apple-itunes-app" content="app-id=6813313340" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preload" href="/assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Shelfie","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","description":"How Shelfie protects your data: integration endpoints instead of exposed databases, SSO and MFA for the team, containerised services, row-level security, and privacy controls you own.","url":"https://shelfie-app.ca","author":{"@type":"Organization","name":"Stackset Technologies Inc.","url":"https://stackset.io"},"offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"}}</script>
+</head>
+<body>
+<div class="curtain" aria-hidden="true"><div class="cur-brand">Shelfie</div></div>
+<div class="progress" aria-hidden="true"></div>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header id="site-nav" class="nav">
+  <div class="container">
+    <a class="brand" href="/" aria-label="Shelfie home"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="1.6" fill="#fff" stroke="none"/></svg></span>Shelfie</a>
+    <nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/features/">Features</a><a href="/security/">Security</a><a href="/about/">About</a><a href="/support/">Support</a></nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://stackset.io" target="_blank" rel="noopener">by Stackset</a>
+      <a class="btn btn-primary" href="/#beta">Join the beta <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <button id="menu-btn" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<div id="mobile-menu" class="mobile-menu"><a href="/">Home</a><a href="/features/">Features</a><a href="/security/">Security</a><a href="/about/">About</a><a href="/support/">Support</a><a class="btn btn-primary" href="/#beta">Join the beta</a></div>
+<main id="main">
+<section class="page-hero dark" style="padding-bottom:0">
+  <div class="container"><p class="eyebrow" data-hero="eyebrow">Security &amp; privacy</p><h1 id="hero-title" class="h1" data-hero="title">Private by <em>architecture.</em></h1><p class="lead" data-hero="sub">Shelfie holds personal things: your routine, your photos, your messages. This page explains, in plain language, how we keep them yours.</p>
+  <div class="hero-meta" data-hero="meta" style="color:var(--dark-body)"><div><strong style="color:#fff">0</strong>public database endpoints</div><div><strong style="color:#fff">100%</strong>internal consoles behind SSO + MFA</div><div><strong style="color:#fff">30 days</strong>to fully purge a deleted account</div></div></div>
+</section>
+
+<section id="security" class="section dark">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Core security infrastructure</p>
+      <h2 class="h2" data-split>Your shelf is yours. <em>Our database is nobody's.</em></h2>
+      <p class="lead mt-3" data-reveal>Shelfie runs on Stackset's hardened platform. The app on your phone never holds a database connection; it talks to a narrow set of integration service endpoints that authenticate, authorise and shape every request. The internal database has no public address at all.</p>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-sticky" data-reveal="left">
+        <div class="arch" aria-label="Diagram: the Shelfie app reaches data only through integration endpoints">
+          <span class="packet"></span><span class="packet"></span><span class="packet"></span>
+          <div class="zone"><span>Your phone</span><div class="lane"><div class="box client">Shelfie iOS / Android <small>short-lived session token</small></div><div class="box blocked">direct database connection <small>no route · refused</small></div></div></div>
+          <div class="flow"><i></i> TLS 1.3 · signed JWT · rate limits <i></i></div>
+          <div class="zone"><span>Edge</span><div class="lane"><div class="box gw">Integration service endpoints <small>auth · validation · policy</small></div></div></div>
+          <div class="flow"><i></i> private network only <i></i></div>
+          <div class="zone"><span>Private network</span><div class="lane"><div class="box svc">Containerised services <small>feeds · chat · catalogue</small></div><div class="box svc">Media &amp; link-extraction workers <small>sandboxed · egress-filtered</small></div><div class="box db">Postgres + object storage <small>row-level security · encrypted</small></div></div></div>
+          <div class="flow"><i></i> SSO (OIDC) + MFA for every internal console <i></i></div>
+        </div>
+      </div>
+      <div class="sec-list" data-stagger>
+        <div class="sec-item"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg></div><div><h3>Integration service endpoints, not tables</h3><p>The app asks for intents ("add this product to my collection"), never rows. Each endpoint validates input, checks who you are and what you're allowed to do, and returns only what that screen needs. A malicious agent probing our edge finds no database to connect to.</p></div></div>
+        <div class="sec-item"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.9 12.1L21 2m-4 4l3 3m-6 0l3 3"/></svg></div><div><h3>Single sign-on for the team, passwordless for you</h3><p>Every internal console the Shelfie team uses sits behind SSO (OpenID Connect) with enforced multi-factor authentication and role-based access. You sign in with Apple, Google, or a one-time email code. We never store a plaintext password.</p></div></div>
+        <div class="sec-item"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div><div><h3>Containerised applications</h3><p>Each service runs in its own container: non-root, read-only filesystem, pinned dependencies, explicit egress allow-list. The worker that reads a store link you paste is isolated from anything that holds user data.</p></div></div>
+        <div class="sec-item"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><div><h3>Row-level security as the last line</h3><p>Even behind the gateway, the database enforces per-row policies tied to your account. A private collection, a followers-only post or a DM cannot be read by a bug in another feature.</p></div></div>
+        <div class="sec-item"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3>Secrets that rotate</h3><p>Credentials are minted at deploy time, scoped to one service and rotated automatically. Nothing sensitive lives in the app bundle, a repository or a laptop.</p></div></div>
+        <div class="sec-item"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><div><h3>Encrypted and auditable</h3><p>TLS 1.3 in transit, AES-256 at rest, immutable signed releases, and audit logs for every privileged action. Photos are stripped of location data before they're stored.</p></div></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section" id="you">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow" data-reveal>Controls in your hands</p><h2 class="h2" data-split>What <em>you</em> decide.</h2></div>
+    <div class="grid grid-3">
+      <div class="card" data-card><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Who sees what</h3><p>Every collection is Public, Followers or Only me. Posts and reels follow their collection. A private account hides your shelf from non-followers entirely.</p></div>
+      <div class="card" data-card><div class="icon lavender"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 20a5 5 0 016-4.6"/></svg></div><h3>Who can reach you</h3><p>Block, mute and report from any profile or chat. Blocked people vanish from your feeds and can't message you.</p></div>
+      <div class="card" data-card><div class="icon mint"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 21h4"/></svg></div><h3>What we send</h3><p>Per-type notification toggles. Mute a chat and its pushes stop. We never email marketing without an explicit opt-in.</p></div>
+      <div class="card" data-card><div class="icon butter"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>What the app can access</h3><p>Photos and camera only when you pick or take a picture. Location only if you turn on location personalisation. No contacts, ever.</p></div>
+      <div class="card" data-card><div class="icon sky"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><h3>Your sign-in</h3><p>Sign in with Apple, Google, or a six-digit email code. No password to leak. Sessions are short-lived and refreshed silently.</p></div>
+      <div class="card" data-card><div class="icon blush"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Leaving</h3><p>Menu → Account → Request account deletion. Removed from production within 7 days and from backups within 30. No email, no phone call.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="disclosure" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="cta-band" data-reveal="scale" style="background:radial-gradient(90% 120% at 0% 0%,#a78bfa,transparent 55%),radial-gradient(80% 100% at 100% 100%,#ff4f8b,transparent 60%),#1c1917">
+      <p class="eyebrow" style="color:#ffe1ea">Responsible disclosure</p>
+      <h2 class="h2 mt-2">Found a vulnerability? <em>Tell us first.</em></h2>
+      <p class="lead mt-3" style="max-width:44rem">Email <a href="mailto:security@stackset.io" style="color:#fff;text-decoration:underline">security@stackset.io</a> with steps to reproduce. We acknowledge within 2 business days and credit researchers who want it. Please don't access other people's data or degrade the service. Machine-readable policy: <a href="/.well-known/security.txt" style="color:#fff;text-decoration:underline">/.well-known/security.txt</a>. Shelfie's infrastructure is operated by <a href="https://stackset.io/security/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Stackset Technologies</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="1.6" fill="#fff" stroke="none"/></svg></span>Shelfie</a>
+        <p class="tag-line">Your shelf, your people. A social beauty app made in Canada by <a href="https://stackset.io" target="_blank" rel="noopener" style="color:var(--brand);font-weight:800">Stackset Technologies</a>.</p>
+        <div class="store-btns mt-3">
+          <span class="store-btn soon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.8 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.4-.8s2 .8 3.4.8 2.3-1.3 3.1-2.5c1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.4-.6 3.1-1.5z"/></svg><span><small>TestFlight beta</small><b>iPhone</b></span></span>
+          <span class="store-btn soon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.5l10.3 9.5-10.3 9.5c-.3-.2-.6-.6-.6-1.1V3.6c0-.5.3-.9.6-1.1zm11.7 10.9l2.6 2.4-11.6 6.7 9-9.1zm0-2.8l-9-9.1 11.6 6.7-2.6 2.4zm4.3 1.4l-2.8-1.6-2.8 2.6 2.8 2.6 2.8-1.6c.9-.5.9-1.5 0-2z"/></svg><span><small>Internal beta</small><b>Android</b></span></span>
+        </div>
+      </div>
+      <div><h4>App</h4><ul><li><a href="/features/">Features</a></li><li><a href="/features/#collections">Collections</a></li><li><a href="/features/#inci">INCI analyzer</a></li><li><a href="/features/#socials">Socials</a></li><li><a href="/#beta">Join the beta</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about/">About Shelfie</a></li><li><a href="/security/">Security</a></li><li><a href="/support/">Help centre</a></li><li><a href="/support/#contact">Contact</a></li><li><a href="https://stackset.io" target="_blank" rel="noopener">Stackset Technologies</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy policy</a></li><li><a href="/terms/">Terms of service</a></li><li><a href="/support/#data">Delete your data</a></li><li><a href="/.well-known/security.txt">security.txt</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Stackset Technologies Inc. · Shelfie™ · Markham, Ontario, Canada</span>
+      <span class="status-row"><span class="dot"></span>beta running normally</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/vendor/split-type.min.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

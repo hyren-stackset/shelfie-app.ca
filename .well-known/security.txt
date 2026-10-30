@@ -1,0 +1,5 @@
+Contact: mailto:security@stackset.io
+Expires: 2027-10-30T00:00:00.000Z
+Preferred-Languages: en, fr
+Canonical: https://shelfie-app.ca/.well-known/security.txt
+Policy: https://shelfie-app.ca/security/#disclosure
